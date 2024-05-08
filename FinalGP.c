@@ -10,14 +10,12 @@
 #define MAX_SIZE 100 
 
 
-// 2D Arra for image
 typedef struct {
     int size;
     int pixels[MAX_SIZE][MAX_SIZE];
 } Image;
 
 
-// Function prototypes
 bool load(Image *image);
 void display(const Image *image);
 bool edit(Image *image);
@@ -26,7 +24,6 @@ bool dim(Image *image);
 bool brighten(Image *image);
 bool save(const Image *image);
 
-//Main Menu Function
 int main() {
     int choice;
     Image currentImage = {0}; // Initialize currentImage size to 0
@@ -88,7 +85,6 @@ int main() {
 }
 
 
-// Function to load a new image from a file
 bool load(Image *image) {
     char filename[50];
     printf("What is the name of the image file?: ");
@@ -105,7 +101,6 @@ bool load(Image *image) {
 }
 
 
-// Function to display the current image
 void display(const Image *image) {
     printf("Displaying current image:\n");
     for (int i = 0; i < image->size; i++) {
@@ -117,7 +112,6 @@ void display(const Image *image) {
 }
 
 
-// Function to edit the current image
 bool edit(Image *image) {
     int editChoice;
     do {
@@ -154,7 +148,6 @@ printf("Invalid choice. Please try again.\n");
 }
 
 
-// Function to crop the current image
 bool crop(Image *image) {
     int newSize;
     printf("The image you want to crop is %d x %d.\n", image->size, image->size);
@@ -174,7 +167,6 @@ bool crop(Image *image) {
 }
 
 
-// Function to dim the current image
 bool dim(Image *image) {
     for (int i = 0; i < image->size; i++) {
         for (int j = 0; j < image->size; j++) {
@@ -185,7 +177,6 @@ bool dim(Image *image) {
 }
 
 
-// Function to brighten the current image
 bool brighten(Image *image) {
     for (int i = 0; i < image->size; i++) {
         for (int j = 0; j < image->size; j++) {
@@ -196,7 +187,6 @@ bool brighten(Image *image) {
 }
 
 
-// Function to save the current image to a file
 bool save(const Image *image) {
     char filename[50];
     printf("what do you want to name the file? (include extension): ");

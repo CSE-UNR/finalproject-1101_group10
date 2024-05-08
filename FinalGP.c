@@ -10,7 +10,7 @@
 #define MAX_SIZE 100 
 
 
-// Structure to store image data
+// 2D Arra for image
 typedef struct {
     int size;
     int pixels[MAX_SIZE][MAX_SIZE];
